@@ -17,18 +17,11 @@ public class clinic {
         patients.add(patient);
         return true;
     }
-
-    public void identifyOverdue(){
-
-
+    public void addVaccine(vaccine v) {
+        vaccines.add(v);
     }
 
-    public void sendReminders(){
-
-
-    }
-
-    public void displayTimeline(){
-
+    public ArrayList<vaccine> getVaccines() {
+        return vaccines;
     }
 }

@@ -6,12 +6,11 @@ public class patient {
     private LocalDate DOB;
     private int patientId;
     private String demographic;
-    private ArrayList<String> chronic;
-    private ArrayList<String> VaccineHistory;
+    private ArrayList<vaccineRecord> VaccineHistory;
     private ArrayList<String> diseases;
     private boolean pregnant;
     private boolean IMC;
-    public patient(String name,int age,LocalDate DOB,String demographic,boolean pregnant,boolean IMC){
+    public patient(int patientId,String name,LocalDate DOB,String demographic,boolean pregnant,boolean IMC){
         if (check(name)) this.name=name;
         if (DOB!=null){
             this.DOB=DOB;
@@ -19,23 +18,17 @@ public class patient {
         if (check(demographic)){
             this.demographic=demographic;
         }
+        this.patientId=patientId;
         this.pregnant=pregnant;
         this.IMC=IMC;
-        chronic=new ArrayList<>();
-        VaccineHistory=new ArrayList<>();
+        VaccineHistory = new ArrayList<>();
         diseases=new ArrayList<>();
     }
-    public void addChronic(String condition){
-        if (check(condition)){
-            chronic.add(condition);
-        }
-    }
-    public void addDisease(String disease) {
-        if (check(disease)) diseases.add(disease);
-    }
 
-    public void addRecord(vaccine v){
-        VaccineHistory.add(v.getName());
+
+    public void addRecord(int vaccineId, LocalDate dateReceived){
+
+        VaccineHistory.add(new vaccineRecord(vaccineId,dateReceived));
     }
 
     public boolean check(String s){
@@ -66,8 +59,12 @@ public class patient {
         return pregnant;
     }
 
-    public ArrayList<String> getVaccineHistory() {
+    public ArrayList<vaccineRecord> getVaccineHistory() {
         return VaccineHistory;
+    }
+
+    public void addDisease(String s){
+        diseases.add(s);
     }
 
 
