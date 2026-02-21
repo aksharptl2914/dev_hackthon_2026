@@ -26,9 +26,7 @@ public class Main {
 
         p1.addRecord(1, LocalDate.now().minusDays(400));   // Flu overdue
         p1.addRecord(3, LocalDate.now().minusDays(170));   // COVID due soon
-
         p2.addRecord(2, LocalDate.now().minusDays(2000));  // Tetanus up to date
-
         p3.addRecord(3, LocalDate.now().minusDays(300));   // COVID overdue
 
         c.addPatient(p1);
