@@ -74,7 +74,6 @@ This project focuses on clarity and correctness rather than production-scale arc
 ## Team
 - Akshar Patel
 - Vrujal Patel
-- Muhammad Faisal
 - Wusimanjiang zulipikaer
 
 This project was built collaboratively, with all team members contributing to the backend. As this was our first hackathon, we focused on learning quickly, iterating together, and build a potential prototype.

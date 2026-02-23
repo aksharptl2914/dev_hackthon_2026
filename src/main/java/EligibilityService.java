@@ -27,7 +27,6 @@ public class EligibilityService {
                     reason = "Not allowed in pregnancy";
                 }
             }
-
             // 3) Risk-based requirement rules (only if vaccine requires it)
             if (eligible) {
                 if (v.getRequiresPregnant() && !p.isPregnant()) {
@@ -35,7 +34,6 @@ public class EligibilityService {
                     reason = "Only recommended if pregnant";
                 }
             }
-
             if (eligible) {
                 if (v.getRequiresIMC() && !p.isIMC()) {
                     eligible = false;
@@ -64,7 +62,7 @@ public class EligibilityService {
             }
 
             // If not eligible, record and continue
-            if (!eligible) {
+            if  (!eligible) {
                 out.add(new EligibilityResult(v, "NOT_ELIGIBLE", null, null));
                 continue;
             }
